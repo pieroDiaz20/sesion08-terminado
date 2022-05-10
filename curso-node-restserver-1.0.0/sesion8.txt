@@ -1,0 +1,94 @@
+implicito es haber incluido en una cosa carpeta, archivo etc.sin que esta lo diga o lo espesifique.
+instalar el paquete cors
+use usa para que a nuestra API solo puedan acceder ciertas paginas web o todo el mundo ya que lo protegeremos
+Proteje nuestro servidor de una manera superficial pero muchos navegadores web como google chrome ,firefox nos van a dar 
+errores si el cors no esta habilitado y ustedes intentan llamar su endpoint
+
+					instalamos
+npm i cors
+					luego en la raiz de nuestro proyecto crear una 
+carpeta models 				
+					,dentro de la carpeta crearemos 
+una clase  .js				
+ 					llamada Server donde resiviremos el request.el archivo .js que creamos en la raiz del proyecto
+index.js 
+					solo los llamaremos como si fuera nuestro index. Ahora crearemos una carpeta llamada 
+routes 					
+					Y dento de routes creamos un 
+archivo uruarios.js
+					donde definiremos las rutas de todos los tipos de metodos del usuario y tomamos la referencia de la carpeta que crearemos 
+controller
+					y dentro de la carpeta crearemos un nuevo 
+archivo usuarios.controller.js
+					donde se desarrollara cada tipo de metodo
+
+					LA INFORMACION QUE BIENE HACIA EL BACKEND VIENE EN FORMADO POST AND DELETE VA A VENIR EN FORMATO JSON
+					 ASI QUE TENEMOOS QUE CONFIGURAR EL MIDERWELPARA RESIBIR XML,JSON.
+					
+					Para recuperar archivos perdidos en local traemos de git con 
+git checkout -- .
+					Ahora con 
+git tag -a v1.0.0 -m "mensaje de la actualizacion"			
+					la version que le pusimos en el archivo json se registra como guardado,agora subamoslo a git hub
+git push --tags
+					Agora nos vamos a la 
+pagina git hub 			
+					y buscamos en el repositorio subido,
+RELEASES Y TAGS.
+					Despues hacemos clic y ,entramos en nuetra 
+version 1.0.0 
+					haciendo denuevo clic.Luego le damos en 
+Create release from tag 
+					editamos y ni bien lo editamos se transforma de un tag a un Releases y colocmos los nombres y 
+					descripcion de la version.luego de editar presionamos el boton 
+Publish release				
+					que sera la version primitiva.
+
+///*********************Desplegamos nuestro rest server a HEROKU(A UN HOSTING)****************************************///
+						abrimos la pagina de 
+heroku 
+						y creamos un nuevo hostin.Copiamos 
+heroku git:remote -a restserver-practica08
+						,lo pegamos en la terminal de nuestro proyecto,ahora colocamos en la consola 
+						hacer el 
+git branch 					
+						para saber si esta en el master o en el main,entonces si esta en el main ya no 
+						poner git push heroku master    si  no   
+
+git push heroku main				y ya deberia hacer todo el deploy por mi.
+						para actualizar los datos hacemos lo siguiente:
+git add . 
+git commit -m "update"
+						con esto ya tenemos los cambio logales agregados.ahora lo suviremos a git hug primero con 
+
+git push
+						y en git hub ya debe de estar el cambio agregado.verificamos que ses aya actualizado 
+						y ahora lo subimos en heroku con 
+git push heroku main
+						Una ves terminada todo esta funcionando pero con nuestro back end plesplegado y nuestra rest api
+						esta en modo de producccion.
+///*********************************Ambiente de produccion y desarrollo en Postman******************************/////
+Postamd permite generar variables de entorno entre otras cosas.Crearemos una variable que nos permita cambiar rapidamente entre 
+produccion y desarrollo, es decr, aqui en los environment diga si estamos en produccion o cambiarlo en modo desarrollo para no tener
+muchos tabs abiertos.
+Para crear un ambiente de desarrollo y produccion empesamos creando dirigiendonos al 
+
+menu lateral izquierdo con la opcion Environments 
+							luego hacemos clic en 
++  
+							para agregar un nuevo env,colocamos el 
+nombre  	:nombre de la produccion
+variable	: varURL
+INITIAL VALUE 	:el url de produccion 
+CURRENT VALUE	:el url de produccion 
+							luego apretamos contro s para guardar y en la parte posterior lado derecho 
+							ya tenemos nuestra ambiente de produccion en node(nombre del ambiente).Despues
+							Repetir el mismo proceso con la variable env pero agora con el nombre desarrollo.
+							
+							Para aplicarlo en la parte del url cuando cambienmos entre produccion y desarrollo
+							colocamos dos llaves porque seran nuestra variables de entorno
+{{}} 							
+							antes del url {{varurl}}url
+							
+						
+
